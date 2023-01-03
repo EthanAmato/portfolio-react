@@ -1,8 +1,13 @@
-import logo from './assets/images/BigE.svg';
-
+import './App.scss';
+import {Routes, Route} from 'react-router-dom';
+import Layout from './components/Layout';
 function App() {
   return (
-    <img src={logo} alt="Big E"></img> 
+    <>
+     <Routes>
+      <Route path="/" element={<Layout/>}></Route>
+     </Routes>
+    </>
   );
 }
 
