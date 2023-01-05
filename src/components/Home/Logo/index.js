@@ -6,22 +6,29 @@ import { DrawSVGPlugin } from "gsap-trial/DrawSVGPlugin";
 import gsap from 'gsap-trial';
 
 gsap.registerPlugin(DrawSVGPlugin);
+const timeline = gsap.timeline()
 
 const Logo = () => {
     const bgRef = useRef();
     const outlineLogoRef = useRef();
     const solidLogoRef = useRef();
-    const timeline = gsap.timeline()
 
     useEffect(() => {
        timeline
             .to(bgRef.current, {
                 duration: 1,
-                delay: 2,
                 opacity: 1,
             })
             .from(".logoStroke", {
-                duration: 7, drawSVG:0, ease:"power1.inOut"
+                duration: 7, 
+                drawSVG:0
+            })
+            .to(outlineLogoRef.current, {
+                opacity: 0,
+                duration: 2
+            })
+            .set(outlineLogoRef.current, {
+                display: "none"
             })
 
         gsap.fromTo(
@@ -40,9 +47,9 @@ const Logo = () => {
 
     return (
         <div className='logo-container' ref={bgRef}>
-            <img src={LogoS} className='solid-logo' ref={solidLogoRef} />
+            <img src={LogoS} className='solid-logo' ref={solidLogoRef} alt="Big E" />
 
-            <svg id="eupZsvr0StJ1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
+            <svg id="eupZsvr0StJ1" ref={outlineLogoRef} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 300 300" shapeRendering="geometricPrecision" textRendering="geometricPrecision"
                 className='logo'>
                 <g className='svg-container'>

@@ -6,13 +6,19 @@
     min-width: 10px;
 
     transition: color 0.5s ease;
-    
+    z-index: 2;
 }
+
+span {
+    z-index: 4;
+}
+
 .text-animate-hover {
     min-width: 10px;
     display: inline-block;
     animation-fill-mode: both;
     transition: color 0.5s ease;
+    z-index: 2;
 
     &:hover {
         animation: rubberBand 1s;
@@ -23,5 +29,7 @@
 @for $i from 1 through 37 {
     .text-animate._#{$i} {
         animation-delay: #{calc($i / 10)}s;
+        z-index: 2;
+
     }
 }

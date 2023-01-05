@@ -1,7 +1,6 @@
 import './index.scss';
 
 const AnimatedLetters = ({ letterClass, stringArray, index }) => {
-    console.log(stringArray)
     return (
         <span>
             {

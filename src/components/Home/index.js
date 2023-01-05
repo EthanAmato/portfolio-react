@@ -8,8 +8,8 @@ import AnimatedLetters from '../AnimatedLetters';
 
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
-    //Rest of '(E)than' for animation - save as character array
-    const nameArray = Array.from('than');
+    //Rest of '(E)than Amato' for animation - save as character array
+    const nameArray = Array.from('than Amato');
     const jobArray = Array.from('Web Developer');
 
     useEffect(() => {
