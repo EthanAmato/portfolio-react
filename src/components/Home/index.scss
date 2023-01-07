@@ -5,7 +5,7 @@
         left: 10%;
         top: 50%;
         transform: translateY(-50%);
-        width: 40%;
+        width: max-content;
         max-height: 90%;
     }
 
@@ -34,7 +34,7 @@
             margin-top: 18px;
             left: 15px;
             opacity: .6;
-            animation: fadeIn 1s 1.7s backwards;
+
         }
         img {
             width: 50px;
@@ -58,7 +58,15 @@
         font-weight: 400;
         font-size: 18px;
         letter-spacing: 3px;
+        padding: 7px;
         animation: fadeIn 1s 1.8s backwards;
+        animation: fadeInBackgroundColor 2s 1.8s forwards;
+        border-radius: 4em;
+        @keyframes fadeInBackgroundColor {
+            from{background-color: none;}
+            to{background-color: #50450a;}
+            
+        }
     }
 
     .flat-button {
