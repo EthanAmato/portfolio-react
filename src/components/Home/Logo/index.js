@@ -6,22 +6,23 @@ import { DrawSVGPlugin } from "gsap-trial/DrawSVGPlugin";
 import gsap from 'gsap-trial';
 
 gsap.registerPlugin(DrawSVGPlugin);
-const timeline = gsap.timeline()
+let timeline = gsap.timeline()
 
 const Logo = () => {
     const bgRef = useRef();
     const outlineLogoRef = useRef();
     const solidLogoRef = useRef();
-
+    
     useEffect(() => {
-       timeline
+        timeline //the current issue is that i definitely don't understand what im doing with this
+        //consult more gsap guides https://greensock.com/mistakes/#from
             .to(bgRef.current, {
                 duration: 1,
                 opacity: 1,
             })
             .from(".logoStroke", {
-                duration: 7, 
-                drawSVG:0
+                duration: 7,
+                drawSVG: 0
             })
             .to(outlineLogoRef.current, {
                 opacity: 0,
@@ -39,10 +40,13 @@ const Logo = () => {
             {
                 opacity: 1,
                 delay: 4,
-                duration: 5,
+                duration: 7,
             }
         )
 
+        // return (() => {
+        //     timeline.kill()
+        // })
     }, [])
 
     return (
