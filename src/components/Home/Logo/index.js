@@ -3,7 +3,7 @@ import LogoS from '../../../assets/images/logo-s.png';
 // import { ReactComponent as LogoLines } from '../../../assets/images/BigELines.svg';
 import { useEffect, useRef } from 'react';
 import { DrawSVGPlugin } from "gsap-trial/DrawSVGPlugin";
-import gsap from 'gsap-trial';
+import gsap, { Expo } from 'gsap-trial';
 
 gsap.registerPlugin(DrawSVGPlugin);
 let timeline = gsap.timeline()
@@ -12,24 +12,27 @@ const Logo = () => {
     const bgRef = useRef();
     const outlineLogoRef = useRef();
     const solidLogoRef = useRef();
-    
+
     useEffect(() => {
         timeline //the current issue is that i definitely don't understand what im doing with this
-        //consult more gsap guides https://greensock.com/mistakes/#from
-            .to(bgRef.current, {
-                duration: 1,
-                opacity: 1,
-            })
-            .from(".logoStroke", {
+            //consult more gsap guides https://greensock.com/mistakes/#from
+
+            .fromTo(".logoStroke", {
+                drawSVG: "0%",
+            },
+            {
                 duration: 7,
-                drawSVG: 0
+                drawSVG: "100%",
+                immediateRender: false
             })
-            .to(outlineLogoRef.current, {
+            .fromTo(outlineLogoRef.current, {
+                opacity: 1,
+            },
+            {
                 opacity: 0,
-                duration: 2
-            })
-            .set(outlineLogoRef.current, {
-                display: "none"
+                duration: 2,
+                display: "none",
+                immediateRender: false
             })
 
         gsap.fromTo(
@@ -39,14 +42,13 @@ const Logo = () => {
             },
             {
                 opacity: 1,
-                delay: 4,
+                delay: 3,
                 duration: 7,
+                immediateRender: false
+
             }
         )
 
-        // return (() => {
-        //     timeline.kill()
-        // })
     }, [])
 
     return (
