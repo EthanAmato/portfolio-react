@@ -1,18 +1,17 @@
 import './index.scss';
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
-import { useState, useEffect, useRef, useCallback } from 'react'
-import $ from 'jquery'
-import TagCloud from 'TagCloud';
+import { useState, useEffect, useRef } from 'react'
+import TagCloud from '@frank-mayer/react-tag-cloud';
 
-const DEFAULT_SPHERE_SIZE = 400;
+const DEFAULT_SPHERE_SIZE = 500;
 const DEFAULT_SPHERE_SIZE_INCREMENT = 10;
 
 
 const Skills = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
-    const [scrollSpeed, setScrollSpeed] = useState(300);
-    const container = ".tagcloud";
+    const [currentSphereRadius, setCurrentSphereRadius] = useState(DEFAULT_SPHERE_SIZE);
+    const wrapperRef = useRef();
     const texts = [
         "HTML",
         "CSS",
@@ -44,46 +43,35 @@ const Skills = () => {
             setLetterClass('text-animate-hover')
         }, 3000)
     }, [])
+
+
     useEffect(() => {
 
-        let elements = document.querySelectorAll(".tagcloud");
-        console.log(elements)
-        if(elements.length > 1) {
-            elements[0].parentNode.removeChild(elements[0]);
-        }
+        const handleWrapperScroll = (e) => {
+            // if(currentSphereRadius < 100) return
+            // if(currentSphereRadius > 800) return
 
-        return () => {
-            const options = {
-                radius: scrollSpeed,
-                maxSpeed: "fast",
-                initSpeed: "fast",
-                keep: true,
-            };
-
-            TagCloud(container, texts, options);
-        };
-    }, [scrollSpeed]);
-
-    const wrapperRef = useRef();
-
-    useEffect(()=>{
-
-        const handleWrapperScroll = (e)=> {
-            if(e.wheelDelta < 0) {
-                setScrollSpeed((currentSpeed) => {
+            console.log(e.wheelDelta)
+            
+            console.log(e.wheelDelta < 0 && currentSphereRadius < 400)
+            //if scrolling up (zooming in -> larger radius) and sphere is under 700 -> zoom in more
+            if (e.wheelDelta > 0 && (currentSphereRadius > 400 || currentSphereRadius < 600)) {
+                setCurrentSphereRadius((currentSpeed) => {
                     console.log(currentSpeed)
-                   return currentSpeed + DEFAULT_SPHERE_SIZE_INCREMENT; 
+                    return currentSpeed + DEFAULT_SPHERE_SIZE_INCREMENT;
                 });
-            } else {
-                setScrollSpeed((currentSpeed) => {
+                return
+            //if scrolling down (zooming out -> smaller radius) and sphere is over 100 -> zoom out more
+            } else if (e.wheelDelta < 0 && (currentSphereRadius > 400 || currentSphereRadius < 600)){
+                setCurrentSphereRadius((currentSpeed) => {
                     console.log(currentSpeed)
-                    return currentSpeed - DEFAULT_SPHERE_SIZE_INCREMENT; 
-                 });
+                    return currentSpeed - DEFAULT_SPHERE_SIZE_INCREMENT;
+                });
+                return
             }
         }
-
         wrapperRef.current.addEventListener('mousewheel', handleWrapperScroll)
-    },[])
+    }, [])
     return (
         <>
             <div className='container contact-page'>
@@ -105,15 +93,19 @@ const Skills = () => {
                 </div>
                 <div className='sphere-wrapper' ref={wrapperRef}>
                     <div className='text-sphere'>
-                        <span className='tagcloud'></span>
+                        <TagCloud
+                            options={(w) => ({
+                                radius: currentSphereRadius,
+                                maxSpeed: "fast",
+                            })}
+                            onClick={(tag, ev) => alert(tag)}
+                            onClickOptions={{ passive: true }}
+                        >{texts}</TagCloud>
                     </div>
                 </div>
-
             </div>
             <Loader type="cube-transition" />
-
         </>
-
     )
 }
 
