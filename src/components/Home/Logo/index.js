@@ -3,17 +3,17 @@ import LogoS from '../../../assets/images/logo-s.png';
 // import { ReactComponent as LogoLines } from '../../../assets/images/BigELines.svg';
 import { useEffect, useRef } from 'react';
 import { DrawSVGPlugin } from "gsap-trial/DrawSVGPlugin";
-import gsap, { Expo } from 'gsap-trial';
+import gsap from 'gsap-trial';
 
-gsap.registerPlugin(DrawSVGPlugin);
-let timeline = gsap.timeline()
 
 const Logo = () => {
+    gsap.registerPlugin(DrawSVGPlugin);
     const bgRef = useRef();
     const outlineLogoRef = useRef();
     const solidLogoRef = useRef();
-
+    
     useEffect(() => {
+        let timeline = gsap.timeline()
         timeline //the current issue is that i definitely don't understand what im doing with this
             //consult more gsap guides https://greensock.com/mistakes/#from
 
@@ -23,7 +23,7 @@ const Logo = () => {
             {
                 duration: 7,
                 drawSVG: "100%",
-                immediateRender: false
+                immediateRender: false,
             })
             .fromTo(outlineLogoRef.current, {
                 opacity: 1,
@@ -49,6 +49,11 @@ const Logo = () => {
             }
         )
 
+        return (() => {
+            //reset timeline on unmount so the animation plays no matter how quickly
+            //user switches btw pages
+            timeline.clear()
+        })
     }, [])
 
     return (

@@ -22,7 +22,9 @@
     "react-loaders": "^3.0.1",
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
+    "react-use-scroll-direction": "^0.1.0",
     "sass": "^1.56.2",
+    "TagCloud": "^2.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
