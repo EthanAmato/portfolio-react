@@ -35,6 +35,7 @@ const Sidebar = () => {
                 <li className='tooltip'>
                     <a
                         target="_blank"
+                        rel='noreferrer'
                         href="https://drive.google.com/file/d/1xJF1kF3X7wjifqGBvX2vRw0SN7ZFa6N9/view?usp=share_link"
                         download={"Ethan Amato Resume"}
                     >

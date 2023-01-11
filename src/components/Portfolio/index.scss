@@ -1,0 +1,21 @@
+.carousel-wrapper {
+    background: rgba(8, 253, 216, 0.1);
+    padding: 0px 20px 0px 20px;
+    float: right;
+    width: 80%;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    
+    .carousel {
+        position: relative;
+        top: 20%;
+        border-radius: 20px;
+    }
+
+    .text-zone {
+        top: 10%;
+        left: 30%;
+        width: fit-content;
+        z-index: 10;
+    }
+}
