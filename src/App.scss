@@ -8,10 +8,12 @@ $primary-color: #D6CCCC;
   font-family: 'Helvetica Neue';
   src: url('./assets/fonts/helvetica-neu.ttf') format('ttf');
 }
+
 @font-face {
   font-family: 'La Belle Aurore';
   src: url('./assets/fonts/LaBelleAurore.woff') format('woff2');
 }
+
 @font-face {
   font-family: 'Coolvetica';
   src: url('./assets/fonts/CoolveticaRg-Regular.woff2') format('woff2');
@@ -19,7 +21,8 @@ $primary-color: #D6CCCC;
 
 // Establishing Default Fonts
 
-input, textarea {
+input,
+textarea {
   font-family: 'Helvetica Neue'
 }
 
@@ -31,8 +34,31 @@ input, textarea {
   top: 0;
   bottom: 0;
   margin: auto;
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   animation: fadeOut .5s 1s;
   animation-fill-mode: forwards;
+
+  &::before {
+    content: 'Ethan';
+    position: absolute;
+    text-align: center;
+    height: 100%;
+    bottom: 100px;
+    right: 38px;
+    margin: 0 auto;
+    font-size: 30px;
+    color: white;
+  }
+  &::after {
+    content: 'Amato';
+    position: absolute;
+    text-align: center;
+    // height: 100%;
+    top: 100px;
+    right: 38px;
+    margin: 0 auto;
+    font-size: 30px;
+    color: white;
+  }
 }

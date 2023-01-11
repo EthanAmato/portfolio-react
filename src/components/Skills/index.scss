@@ -1,16 +1,13 @@
-
 .sphere-wrapper {
     background: rgba(170, 238, 228, 0.1);
     float: right;
     width: 47%;
     height: 100%;
-    border-radius: 20px 0 0 20px ;
+    border-radius: 20px 0 0 20px;
     max-width: 45%;
     position: relative;
-    overflow-y: hidden;
+    overflow: hidden;
 }
-
- 
 
 .text-sphere {
     position: relative;
@@ -19,8 +16,10 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     overflow: hidden;
+    animation: rotateIn 1s 1s;
+    animation-fill-mode: forwards;
 }
 
 .tagcloud {
@@ -31,7 +30,7 @@
     font-weight: 600;
     letter-spacing: 0.0625em;
     font-size: 1.3em;
-    
+
     .tagcloud--item {
         color: #00ffffff;
         text-transform: uppercase;
@@ -39,5 +38,27 @@
         &:hover {
             color: #ff6347;
         }
+    }
+}
+
+.flat-button {
+    color: #D6CCCC;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    font-family: sans-serif;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid #ffd700;
+    margin-top: 25px;
+    float: left;
+    animation: fadeIn 1s 1.8s backwards;
+    white-space: nowrap;
+    transition: all .5s ease-in-out;
+
+    &:hover {
+        transition: all .5s ease-in-out;
+        background-color: #ffd700;
+        color: #333;
     }
 }

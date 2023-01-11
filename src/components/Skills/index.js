@@ -2,6 +2,7 @@ import './index.scss';
 import Loader from 'react-loaders'
 import AnimatedLetters from '../AnimatedLetters'
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom';
 import TagCloud from '@frank-mayer/react-tag-cloud';
 
 const DEFAULT_SPHERE_SIZE = 500;
@@ -37,6 +38,10 @@ const Skills = () => {
         "Cluster Analysis",
     ];
 
+    function handleTagClick(tag) {
+        window.open(`https://www.google.com/search?q=${tag}`, "_blank");
+        window.focus();
+    }
 
     useEffect(() => {
         setTimeout(() => {
@@ -48,33 +53,26 @@ const Skills = () => {
     useEffect(() => {
 
         const handleWrapperScroll = (e) => {
-            // if(currentSphereRadius < 100) return
-            // if(currentSphereRadius > 800) return
-
-            console.log(e.wheelDelta)
-            
-            console.log(e.wheelDelta < 0 && currentSphereRadius < 400)
-            //if scrolling up (zooming in -> larger radius) and sphere is under 700 -> zoom in more
-            if (e.wheelDelta > 0 && (currentSphereRadius > 400 || currentSphereRadius < 600)) {
+            if (e.wheelDelta > 0) {
                 setCurrentSphereRadius((currentSpeed) => {
-                    console.log(currentSpeed)
-                    return currentSpeed + DEFAULT_SPHERE_SIZE_INCREMENT;
+                    if (currentSpeed + DEFAULT_SPHERE_SIZE_INCREMENT <= (DEFAULT_SPHERE_SIZE * 2)) {
+                        return currentSpeed + DEFAULT_SPHERE_SIZE_INCREMENT;
+                    }
+                    else return currentSpeed
                 });
-                return
-            //if scrolling down (zooming out -> smaller radius) and sphere is over 100 -> zoom out more
-            } else if (e.wheelDelta < 0 && (currentSphereRadius > 400 || currentSphereRadius < 600)){
+            } else {
                 setCurrentSphereRadius((currentSpeed) => {
-                    console.log(currentSpeed)
-                    return currentSpeed - DEFAULT_SPHERE_SIZE_INCREMENT;
+                    if (currentSpeed - DEFAULT_SPHERE_SIZE_INCREMENT >= (DEFAULT_SPHERE_SIZE / 4)) {
+                        return currentSpeed - DEFAULT_SPHERE_SIZE_INCREMENT;
+                    } else return currentSpeed
                 });
-                return
             }
         }
         wrapperRef.current.addEventListener('mousewheel', handleWrapperScroll)
     }, [])
     return (
         <>
-            <div className='container contact-page'>
+            <div className='container skills-page'>
                 <div className='text-zone'>
                     <h1>
                         <AnimatedLetters
@@ -84,11 +82,23 @@ const Skills = () => {
                         />
                     </h1>
                     <p>
-                        I am interested in opportunities involving full-stack development or data science in evironments
-                        where I can improve my programming skills and deepen my knowledge. I would prefer to work remotely
-                        but am open to relocating.
-                        If you have any questions or requests whatsoever, please use this form to contact me directly:
+                        I have hands-on experience working in an AGILE environment at the Boston College
+                        Language Learning Lab. I participated in regular SCRUM meetings and have experience
+                        with kanban boards using resources like Trello.
                     </p>
+                    <p>
+
+                        I have hands-on experience with big data. I wrote my Honors Thesis at Boston College by consolidating
+                        modern approaches to machine learning, linguistics, data science, and cognitive psychology on a high-dimensional
+                        dataset with over 400,000 datapoints.
+                    </p>
+                    <p>
+
+                        I have practical experience with full-stack web development. I completed the Tech Talent South FullStack Developer
+                        course and have several deployed projects demonstrating a proficiency in web development
+                    </p>
+                    <Link to="/portfolio" className='flat-button'>SEE MY PROJECTS</Link>
+
 
                 </div>
                 <div className='sphere-wrapper' ref={wrapperRef}>
@@ -98,7 +108,7 @@ const Skills = () => {
                                 radius: currentSphereRadius,
                                 maxSpeed: "fast",
                             })}
-                            onClick={(tag, ev) => alert(tag)}
+                            onClick={(tag, ev) => handleTagClick(tag)}
                             onClickOptions={{ passive: true }}
                         >{texts}</TagCloud>
                     </div>
