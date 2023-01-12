@@ -1,0 +1,76 @@
+.react-multi-carousel-item {
+
+    .project-wrapper {
+
+        display: flex;
+        display: block;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        img {
+
+            margin-top: 40px;
+            max-width: 90%;
+            max-height: 100%;
+            object-fit: cover;
+            bottom: 100px;
+            -webkit-box-reflect: below 2px linear-gradient(transparent, transparent, #0004);
+
+            transform-origin: center;
+            transform: perspective(800px) rotateY(25deg);
+            transition: 0.5s;
+        }
+
+        .description-container {
+            margin-top: 10%;
+
+            .info {
+                h2 {
+                    margin: 0;
+                    padding-right: 20px;
+                    color: white;
+                    font-size: 3em;
+                }
+
+                p {
+                    margin: 0px 50px 0px 0px;
+                    padding-right: 20px;
+                    color: white;
+                    font-size: 2em;
+                }
+            }
+
+            .buttons {
+                position: absolute;
+                bottom: -40px;
+
+                .button-link {
+                    button {
+                        font-size: 15px;
+                        font-family:'helvetica';
+                        padding: 5px 10px 5px 10px;
+                        border-radius: 20px;
+                        margin-right: 10px;
+                    }
+                }
+
+            }
+        }
+
+
+        &:hover,
+        &:focus {
+            img {
+                opacity: 0.3;
+
+                &:hover,
+                &:focus {
+                    transform: perspective(800px) rotateY(0deg);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+}

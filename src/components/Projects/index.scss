@@ -5,11 +5,14 @@
     width: 80%;
     height: 100%;
     border-radius: 20px 0px 0px 20px;
+
     
     .carousel {
         position: relative;
-        top: 20%;
+        height: 100%;
         border-radius: 20px;
+        animation: fadeInRight 2s 1s ease;
+        animation-fill-mode: forwards;
     }
 
     .text-zone {
