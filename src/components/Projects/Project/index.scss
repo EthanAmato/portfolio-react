@@ -7,16 +7,29 @@
         justify-content: center;
         align-items: center;
         gap: 20px;
+        transition: opacity 0.5s 0.5s ease-in-out;
 
+        a {
+            transition: opacity 0.5s 0.5s ease-in-out;
+        }
+
+        .opacityNone {
+            opacity: 0;
+            transition: opacity 0.5s 0.5s ease-in-out;
+
+        }
+        .displayNone {
+            display: none;
+            transition: display 0.5s 0.5s ease-in-out;
+
+        }
         img {
-
             margin-top: 40px;
             max-width: 90%;
             max-height: 100%;
             object-fit: cover;
             bottom: 100px;
             -webkit-box-reflect: below 2px linear-gradient(transparent, transparent, #0004);
-
             transform-origin: center;
             transform: perspective(800px) rotateY(25deg);
             transition: 0.5s;

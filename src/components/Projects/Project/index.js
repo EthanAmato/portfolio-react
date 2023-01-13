@@ -1,15 +1,18 @@
 import './index.scss';
-
-const Project = ({ 
+const Project = ({
     description,
-    image,
+    image1,
+    image2,
     headline,
     repoURL = "#",
     isDeployed = false,
     deploymentURL = "#" }) => {
+
+
     return (
         <div className='project-wrapper'>
-            <a href="#"><img className="website-image" src={image} alt={`${headline}`} /></a>
+            <a href="#" className='image1-link'><img draggable={false} className="website-image image1" src={image1} alt={`${headline}`} /></a>
+            <a href="#" className='image2-link opacityNone displayNone'><img draggable={false} className="website-image image2 opacityNone displayNone" src={image2} alt={`${headline}`} /></a>
             <div className='description-container'>
                 <div className='info'>
                     <h2>{headline}</h2>
