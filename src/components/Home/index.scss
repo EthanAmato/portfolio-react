@@ -5,13 +5,15 @@
         left: 10%;
         top: 50%;
         transform: translateY(-50%);
-        width: max-content;
+        width: auto;
         max-height: 90%;
+        
+       
     }
 
     h1 {
         color: white;
-        font-size: 60px;
+        font-size: 58px;
         margin: 0;
         font-weight: 400;
 
@@ -54,11 +56,14 @@
 
     h2 {
         color: #c1c1c1;
-        margin-top: 45px;
+        width: fit-content;
+        // margin-top: 45px;
+        margin: 45px auto auto auto;
+        text-align: center;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 2em;
         letter-spacing: 3px;
-        padding: 7px;
+        padding: 0px 10px 0px 10px;
         animation: fadeIn 1s 1.8s backwards;
         animation: fadeInBackgroundColor 2s 1.8s forwards;
         border-radius: 4em;

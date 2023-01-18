@@ -1,39 +1,36 @@
+
 import './index.scss';
 import LogoS from '../../../assets/images/logo-s.png';
 // import { ReactComponent as LogoLines } from '../../../assets/images/BigELines.svg';
 import { useEffect, useRef } from 'react';
-import { DrawSVGPlugin } from "gsap-trial/DrawSVGPlugin";
+import $ from 'jquery'
+import jqueryDrawsvg from 'drawsvg';
 import gsap from 'gsap-trial';
 
-
 const Logo = () => {
-    gsap.registerPlugin(DrawSVGPlugin);
     const bgRef = useRef();
     const outlineLogoRef = useRef();
     const solidLogoRef = useRef();
-    
+
     useEffect(() => {
         let timeline = gsap.timeline()
-        timeline //the current issue is that i definitely don't understand what im doing with this
-            //consult more gsap guides https://greensock.com/mistakes/#from
+        let myLogoSVG = $("#bigOutlineLogo").drawsvg({
+            duration: 2000,
+        });
+        myLogoSVG.drawsvg("animate");
 
-            .fromTo(".logoStroke", {
-                drawSVG: "0%",
-            },
-            {
-                duration: 7,
-                drawSVG: "100%",
-                immediateRender: false,
-            })
+
+        timeline
             .fromTo(outlineLogoRef.current, {
                 opacity: 1,
             },
-            {
-                opacity: 0,
-                duration: 2,
-                display: "none",
-                immediateRender: false
-            })
+                {
+                    opacity: 0,
+                    duration: 2,
+                    display: "none",
+                    delay: 10,
+                    immediateRender: false
+                })
 
         gsap.fromTo(
             solidLogoRef.current,
@@ -42,7 +39,7 @@ const Logo = () => {
             },
             {
                 opacity: 1,
-                delay: 3,
+                delay: 8,
                 duration: 7,
                 immediateRender: false
 
@@ -60,7 +57,7 @@ const Logo = () => {
         <div className='logo-container' ref={bgRef}>
             <img src={LogoS} className='solid-logo' ref={solidLogoRef} alt="Big E" />
 
-            <svg id="eupZsvr0StJ1" ref={outlineLogoRef} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
+            <svg id="bigOutlineLogo" ref={outlineLogoRef} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 300 300" shapeRendering="geometricPrecision" textRendering="geometricPrecision"
                 className='logo'>
                 <g className='svg-container'>
