@@ -5,6 +5,7 @@ import LogoS from '../../../assets/images/logo-s.png';
 import { useEffect, useRef } from 'react';
 import $ from 'jquery'
 import jqueryDrawsvg from 'drawsvg';
+import easeInOutQuad from 'jquery.easing'
 import gsap from 'gsap-trial';
 
 const Logo = () => {
@@ -16,6 +17,7 @@ const Logo = () => {
         let timeline = gsap.timeline()
         let myLogoSVG = $("#bigOutlineLogo").drawsvg({
             duration: 2000,
+            easing: "easeInOutQuad"
         });
         myLogoSVG.drawsvg("animate");
 
