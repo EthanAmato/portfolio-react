@@ -78,7 +78,8 @@ const Sidebar = () => {
                     onClick={() => setShowNav(false)}
                     icon={faClose}
                     color="#FFFFFF"
-                    size="3x"
+                    cursor="pointer"
+                    size="4x"
                     className='close-icon' />
             </nav>
             <ul>
@@ -130,7 +131,8 @@ const Sidebar = () => {
                 onClick={() => setShowNav(true)}
                 icon={faBars}
                 color="#FFFFFF"
-                size="3x"
+                cursor="pointer"
+                size="4x"
                 className='hamburger-icon' />
         </div>
     )

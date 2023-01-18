@@ -192,11 +192,25 @@
 
 @media screen and (max-width: 1200px) {
     .nav-bar {
-        background: transparent;
+        // background: transparent;
         position: initial;
         height: auto;
         min-height: auto;
+        width: 100%;
+        z-index: 100;
 
+        .logo {
+            width: fit-content;
+            img {
+                position: relative;
+                left: 15px;
+                width: 30px;
+            }
+
+            .sub-logo {
+                display: none;
+            }
+        }
 
         ul,
         nav {
@@ -228,7 +242,7 @@
                 opacity: 1;
                 position: initial;
                 width: auto;
-                margin-left: 10PX;
+                margin-left: 10px;
             }
 
             a svg {
@@ -236,11 +250,13 @@
             }
         }
 
+     
+
         .hamburger-icon,
         .close-icon {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 20px;
+            right: 27px;
             display: block;
         }
     }
