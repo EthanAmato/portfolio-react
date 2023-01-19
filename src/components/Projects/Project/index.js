@@ -64,13 +64,6 @@ const Project = ({
                 })
     }
 
-    console.table( description,
-        image1,
-        image2,
-        headline,
-        repoURL,
-        isDeployed,
-        deploymentURL)
     return (
         <div className='project-wrapper' onMouseEnter={handleHover} onMouseLeave={handleMouseLeave}>
             <a href={repoURL} className='image1-link' target="_blank" >
@@ -85,7 +78,6 @@ const Project = ({
                     className="website-image image2"
                     src={image2}
                     alt={`${headline}`}
-                    style={{ opacity: "0" }}
                 />
             </a>
             <div className='description-container'>

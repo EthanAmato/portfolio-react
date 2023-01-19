@@ -107,7 +107,7 @@ const Projects = () => {
     return (
         <>
             <div className='container projects-page'>
-                <div className='carousel-wrapper'>
+                <div className='carousel-wrapper desktop'>
                     <div className='text-zone'>
                         <h1>
                             <AnimatedLetters
@@ -185,7 +185,26 @@ const Projects = () => {
                         })}
                     </Carousel>
                 </div>
-
+                <div className='carousel-wrapper mobile'>
+                        <ul className='projects-list'>
+                            {myProjects.map((project, index) => {
+                                return (
+                                    <li className='project-list-item'>
+                                        <Project
+                                            key={`${project.headline + index}`}
+                                            description={project.description}
+                                            headline={project.headline}
+                                            image1={project.image1}
+                                            image2={project.image2}
+                                            repoURL={project.repoURL}
+                                            deploymentURL={project.deploymentURL}
+                                            isDeployed={project.isDeployed}
+                                        />
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                </div>
             </div>
 
             <Loader type="cube-transition" />

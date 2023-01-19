@@ -82,7 +82,7 @@ const Sidebar = () => {
                     size="4x"
                     className='close-icon' />
             </nav>
-            <ul>
+            <ul className={showNav ? 'mobile-show' : ''}>
                 <li className='tooltip'>
                     <a
                         target="_blank"

@@ -4,8 +4,6 @@
     .react-multi-carousel-item {
 
         .project-wrapper {
-
-            display: flex;
             display: block;
             justify-content: center;
             align-items: center;
@@ -41,6 +39,9 @@
                 transition: transform 1s ease-in-out, opacity 1s ease-in-out;
             }
 
+            .image2 {
+                opacity: 0;
+            }
             .description-container {
                 position: absolute;
                 bottom: 5%;
@@ -75,7 +76,6 @@
                 .buttons {
                     position: absolute;
                     bottom: -40px;
-
 
                     .flat-button {
                         background-color: transparent;

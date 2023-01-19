@@ -129,3 +129,26 @@
         transform: rotateX(90deg);
     }
 }
+
+
+@media screen and (max-width: 1200px) {
+
+    .about-page {
+        .text-zone {
+            p {
+                border-radius: 1em;
+                padding: 7px;
+                background-color: #333;
+            }
+        }
+    }
+
+    .stage-cube-content {
+        width: 100%;
+        position: absolute;
+        top: 10%;
+        opacity: .3;
+    }
+
+
+}

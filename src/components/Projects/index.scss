@@ -6,7 +6,7 @@
     height: 100%;
     border-radius: 20px 0px 0px 20px;
 
-    
+
     .carousel {
         position: relative;
         height: 100%;
@@ -21,5 +21,44 @@
         left: 30%;
         width: fit-content;
         z-index: 10;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .carousel-wrapper.desktop{
+        display: none;
+    }
+
+    .container.projects-page {
+        width: auto;
+        padding: 0;
+    }
+
+    .carousel-wrapper.mobile {
+        width: fit-content;
+        height: 100vh;
+        overflow: scroll;
+        float: none;
+        border-radius: 0px;
+        margin: 0 auto;
+        padding: 20px;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .website-image {
+            width: 90%;
+            margin: 0 auto;
+            display: block;
+        }
+        .image2 {
+            opacity: 1;
+            display: block;
+        }
+        .project-wrapper {
+
+            margin-bottom: 20px;
+        }
     }
 }

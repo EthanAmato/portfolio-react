@@ -248,8 +248,49 @@
             a svg {
                 opacity: 1 !important;
             }
+
+
+        }
+        ul {
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            background: #181818;
+            height: fit-content;
+            margin: 0;
+            z-index: 2;
+            position: fixed;
+            z-index: 10;
+
+            &.mobile-show {
+                display: block;
+            }
+
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            a:after {
+                opacity: 1;
+                position: initial;
+                width: auto;
+                margin-left: 10px;
+            }
+
+            a svg {
+                opacity: 1 !important;
+            }
+
+
         }
 
+        ul {
+            &.mobile-show {
+                display: block;
+            }
+        }
      
 
         .hamburger-icon,
