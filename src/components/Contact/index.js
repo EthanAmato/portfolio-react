@@ -11,7 +11,6 @@ import './index.scss'
 const Contact = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
     const refForm = useRef();
-    const position = [51.505, -0.09]
 
     useEffect(() => {
         setTimeout(() => {
@@ -21,7 +20,6 @@ const Contact = () => {
 
     const sendEmail = (e) => {
         e.preventDefault()
-
         emailjs
             .sendForm(
                 process.env.REACT_APP_SERVICE_ID,
@@ -30,7 +28,7 @@ const Contact = () => {
                 process.env.REACT_APP_PUBLIC_KEY
             ).then(
                 (result) => {
-                    alert('Message Successfully Send!')
+                    alert('Message Sent Successfully!')
                     window.location.reload(false)
                 }, (error) => {
                     alert('Message Failed to Send, Please try again')
