@@ -183,7 +183,7 @@ const Projects = () => {
                     <ul className='projects-list'>
                         {myProjects.map((project, index) => {
                             return (
-                                <li className='project-list-item'>
+                                <li className='project-list-item' key={`${project.headline + index}`}>
                                     <Project
                                         key={`${project.headline + index}`}
                                         description={project.description}

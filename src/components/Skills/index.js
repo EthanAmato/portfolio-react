@@ -98,7 +98,7 @@ const Skills = () => {
                         I have practical experience with full-stack web development. I completed the Tech Talent South FullStack Developer
                         course and have several deployed projects demonstrating a proficiency in web development
                     </p>
-                    <Link to="/portfolio" className='flat-button'>SEE MY PROJECTS</Link>
+                    <Link to="/projects" className='flat-button'>SEE MY PROJECTS</Link>
 
 
                 </div>
