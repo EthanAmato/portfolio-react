@@ -26,6 +26,7 @@ const Skills = () => {
         "Jquery",
         "Scikit Learn",
         "GIT",
+        "AWS",
         "R Project",
         "MERN / MEAN",
         "Angular",

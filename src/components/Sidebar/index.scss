@@ -289,6 +289,51 @@
         ul {
             &.mobile-show {
                 display: block;
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: #D6CCCC;
+                    font-size: 12px;
+                    letter-spacing: 3px;
+                    text-decoration: none;
+                }
+    
+                a:after {
+                    opacity: 1;
+                    position: initial;
+                    width: auto;
+                    margin-left: 10px;
+                }
+    
+                a svg {
+                    height: 2.5em;
+                    opacity: 1 !important;
+                }
+
+                li.resume > a {
+                    &:after {
+                        content: 'RESUME';
+                    }
+                }
+            
+                li.linkedin > a {
+                    &:after {
+                        content: 'LINKEDIN';
+                    }
+                }
+            
+                li.github > a {
+                    &:after {
+                        content: 'GITHUB';
+                    }
+                }
+            
+                a.projects-link {
+                    &:after {
+                        content: 'PROJECTS';
+                    }
+                }
             }
         }
      

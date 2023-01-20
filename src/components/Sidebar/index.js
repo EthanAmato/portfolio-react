@@ -83,7 +83,7 @@ const Sidebar = () => {
                     className='close-icon' />
             </nav>
             <ul className={showNav ? 'mobile-show' : ''}>
-                <li className='tooltip'>
+                <li className='tooltip resume'>
                     <a
                         target="_blank"
                         rel='noreferrer'
@@ -98,7 +98,7 @@ const Sidebar = () => {
                     </a>
                     <span className="tooltiptext">Read My Resume</span>
                 </li>
-                <li className='tooltip'>
+                <li className='tooltip linkedin'>
                     <a
                         target="_blank"
                         rel="noreferrer"
@@ -112,7 +112,7 @@ const Sidebar = () => {
                     </a>
                     <span className="tooltiptext">My LinkedIn</span>
                 </li>
-                <li className='tooltip'>
+                <li className='tooltip github'>
                     <a
                         target="_blank"
                         rel="noreferrer"

@@ -23,9 +23,11 @@
         z-index: 10;
     }
 }
-
+.carousel-wrapper.mobile {
+    display: none;
+}
 @media screen and (max-width: 1200px) {
-    .carousel-wrapper.desktop{
+    .carousel-wrapper.desktop {
         display: none;
     }
 
@@ -35,30 +37,76 @@
     }
 
     .carousel-wrapper.mobile {
+        display: block;
         width: fit-content;
-        height: 100vh;
+        height: 90vh;
         overflow: scroll;
         float: none;
-        border-radius: 0px;
+        border-radius: 20px;
         margin: 0 auto;
         padding: 20px;
-        ul {
+
+        .projects-list {
             list-style: none;
             margin: 0;
             padding: 0;
-        }
-        .website-image {
-            width: 90%;
-            margin: 0 auto;
-            display: block;
-        }
-        .image2 {
-            opacity: 1;
-            display: block;
-        }
-        .project-wrapper {
 
-            margin-bottom: 20px;
+
+            .project-list-item {
+                background-color:rgba(#0191b5,0.4) ;
+                height: 100%;
+                padding: 1em;
+                border-radius: 20px;
+                margin-bottom: 10px;
+
+                .project-wrapper {
+                    margin-bottom: 20px;
+                    .website-image {
+                        width: 100%;
+                        max-width: 90%;
+                        margin: 0 auto;
+                        display: block;
+
+                        &.image2{
+                            margin-top: 10px;
+                            opacity: 1;
+                            display: block;
+                        }
+                    }
+                    .description-container {
+                        position: block;
+                        height: fit-content;
+                        padding: 20px;
+
+                        h2 {
+                            font-size: 25px;
+                            font-weight: 800;
+                            color: #fff;
+                            margin-bottom: 0;
+                        }
+
+                        p {
+                            margin-top: 0;
+                        }
+                        .buttons {
+                            display: inline-block;
+                            margin: 0 auto;
+
+                            button {
+                                margin: 0;
+                                font-size: 15px;
+                                background-color: transparent;
+                                cursor: pointer;
+                                &:hover {
+                                    transition: all .5s ease-in-out;
+                                    background-color: #ffd700;
+                                    color: #333;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

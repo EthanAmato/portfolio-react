@@ -111,6 +111,7 @@
             padding: 20px;
             border-radius: 1em;
             width: fit-content;
+            margin: 0 auto;
             span {
                 font-size: 40px;
             }
@@ -147,6 +148,11 @@
             transform: rotateZ(0deg) !important;
             z-index: 1;
             
+        }
+
+        .text-zone {
+            position: absolute;
+            left: 0;
         }
     }
 }

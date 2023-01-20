@@ -5,20 +5,15 @@ import "react-multi-carousel/lib/styles.css"
 import { useState, useEffect } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
 import Loader from 'react-loaders';
-import gsap from 'gsap-trial';
-import useInterval from '../../hooks/useInterval';
 import { ECommerceAnimation, EcommerceHome, GraphAnimation, GraphHome, NotesAppHome, NotesAppMarkdown, PrettyMenuAnimation, PrettyMenuIMG, QuizHomePage, QuizResultsPage, SemCoreAnimation, SemCoreHome, StarbucksAnimation, StarbucksHome, TwitterCloneHome, TwitterCloneProfile } from '../../assets/images/project_images';
 // import se from '../../assets/images/project_images/SemcoreHome.PNG'
 const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
-    const [isImage1, setIsImage1] = useState(true)
-    const timeline = gsap.timeline();
 
     const myProjects = [
         {
             headline: "Semantic Core",
-            description: "Visualize relationship between meaning and grammatical gender across 19 languages with this \
-                          full-stack, AI-Powered, National Science Foundation-funded site",
+            description: "Visualize relationship between meaning and grammatical gender across 19 languages with this full-stack, AI-Powered, National Science Foundation-funded site",
             image1: SemCoreHome,
             image2: SemCoreAnimation,
             repoURL: "https://github.com/EthanAmato/SemanticCoreFrontend",
@@ -27,8 +22,7 @@ const Projects = () => {
         },
         {
             headline: "Fullstack Notetaking App",
-            description: "Built with OAuth2 and Firebase NoSQL Integration, make an account and write as many markdown-compatible \
-                          notes as you please. Also allows for creation of and sorting by custom tags",
+            description: "Built with OAuth2 and Firebase NoSQL Integration, make an account and write as many markdown-compatible notes as you please. Also allows for creation of and sorting by custom tags",
             image1: NotesAppHome,
             image2: NotesAppMarkdown,
             repoURL: "https://github.com/EthanAmato/TypeScriptNoteTakerApp",
@@ -37,8 +31,7 @@ const Projects = () => {
         },
         {
             headline: "3D Interactive Plotter",
-            description: "Given a Microsoft Excel File, visualize data points in 3D space! Allows options for sizing, titles, \
-                           vectors to custom origins, and download to HTML file for embedding in other sites",
+            description: "Given a Microsoft Excel File, visualize data points in 3D space! Allows options for sizing, titles, vectors to custom origins, and download to HTML file for embedding in other sites",
             image1: GraphHome,
             image2: GraphAnimation,
             repoURL: "https://github.com/EthanAmato/3dPlotter",
@@ -56,8 +49,7 @@ const Projects = () => {
         },
         {
             headline: "Fullstack Twitter Clone",
-            description: "A Twitter clone complete with working hashtags, authentication, following, and home feed. \
-                          Made with Springboot in Java",
+            description: "A Twitter clone complete with working hashtags, authentication, following, and home feed. Made with Springboot in Java",
             image1: TwitterCloneHome,
             image2: TwitterCloneProfile,
             repoURL: "https://github.com/EthanAmato/TechTalentTwitter",
@@ -65,8 +57,7 @@ const Projects = () => {
         },
         {
             headline: "MERN-Stack Quiz App",
-            description: "MongoDB, ExpressJS, React, Redux, and Node.js project that serves up questions and answers through an API \
-                          allows for accurate scoring and storage of past results by username",
+            description: "MongoDB, ExpressJS, React, Redux, and Node.js project that serves up questions and answers through an API allows for accurate scoring and storage of past results by username",
             image1: QuizHomePage,
             image2: QuizResultsPage,
             repoURL: "https://github.com/EthanAmato/PediatricQuizzerClient",
@@ -97,12 +88,6 @@ const Projects = () => {
             setLetterClass('text-animate-hover')
         }, 3000)
     }, [])
-
-
-
-
-    //custom hook that uses dynamic state changes to replay transitioning effect
-
 
     return (
         <>
@@ -186,24 +171,33 @@ const Projects = () => {
                     </Carousel>
                 </div>
                 <div className='carousel-wrapper mobile'>
-                        <ul className='projects-list'>
-                            {myProjects.map((project, index) => {
-                                return (
-                                    <li className='project-list-item'>
-                                        <Project
-                                            key={`${project.headline + index}`}
-                                            description={project.description}
-                                            headline={project.headline}
-                                            image1={project.image1}
-                                            image2={project.image2}
-                                            repoURL={project.repoURL}
-                                            deploymentURL={project.deploymentURL}
-                                            isDeployed={project.isDeployed}
-                                        />
-                                    </li>
-                                );
-                            })}
-                        </ul>
+                    <div className='text-zone'>
+                        <h1>
+                            <AnimatedLetters
+                                stringArray={Array.from("My Projects")}
+                                index={15}
+                                letterClass={letterClass}
+                            />
+                        </h1>
+                    </div>
+                    <ul className='projects-list'>
+                        {myProjects.map((project, index) => {
+                            return (
+                                <li className='project-list-item'>
+                                    <Project
+                                        key={`${project.headline + index}`}
+                                        description={project.description}
+                                        headline={project.headline}
+                                        image1={project.image1}
+                                        image2={project.image2}
+                                        repoURL={project.repoURL}
+                                        deploymentURL={project.deploymentURL}
+                                        isDeployed={project.isDeployed}
+                                    />
+                                </li>
+                            );
+                        })}
+                    </ul>
                 </div>
             </div>
 
