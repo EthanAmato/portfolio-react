@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 import { MapContainer } from 'react-leaflet/MapContainer'
 import { TileLayer } from 'react-leaflet/TileLayer'
 import { Marker, Popup } from 'react-leaflet';
- 
+
 import './index.scss'
 
 const Contact = () => {
@@ -120,8 +120,9 @@ const Contact = () => {
                 </div>
 
             </div>
-            <Loader type="cube-transition" />
-
+            <div className='loader-wrapper'>
+                <Loader type="cube-transition" style={{ transform: 'scale(1.5)' }} />
+            </div>
         </>
 
     )

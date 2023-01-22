@@ -75,6 +75,7 @@
     width: 100%;
     top: 0;
     opacity: .3;
+    z-index: -10;
 }
 .skills-page .text-zone {
     height: 90vh;
@@ -91,8 +92,8 @@
 }
 
 
-@media screen and (max-height: 851px) {
-    .container {
+@media screen and (max-height: 900px) {
+    .skills-page.container {
         height: 85vh;
         overflow-y: scroll;
     }

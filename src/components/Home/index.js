@@ -49,7 +49,9 @@ const Home = () => {
                 </div>
                 <Logo />
             </div>
-            <Loader type='cube-transition' />
+            <div className='loader-wrapper'>
+                <Loader type="cube-transition" style={{ transform: 'scale(1.5)' }} />
+            </div>
         </>
     );
 }
