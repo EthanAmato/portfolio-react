@@ -5,7 +5,7 @@ import "react-multi-carousel/lib/styles.css"
 import { useState, useEffect } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
 import Loader from 'react-loaders';
-import { ECommerceAnimation, EcommerceHome, GraphAnimation, GraphHome, NotesAppHome, NotesAppMarkdown, PrettyMenuAnimation, PrettyMenuIMG, QuizHomePage, QuizResultsPage, SemCoreAnimation, SemCoreHome, StarbucksAnimation, StarbucksHome, TwitterCloneHome, TwitterCloneProfile } from '../../assets/images/project_images';
+import { ECommerceAnimation, EcommerceHome, GraphAnimation, GraphHome, NotesAppHome, NotesAppMarkdown, PrettyMenuAnimation, PrettyMenuIMG, QuizHomePage, QuizResultsPage, SemCoreAnimation, SemCoreHome, StarbucksAnimation, StarbucksHome, TwitterCloneHome, TwitterCloneProfile, FrontEndDevStack, FrontEndDevStackAnimation, ChatApp, ChatAppAnimation } from '../../assets/images/project_images';
 // import se from '../../assets/images/project_images/SemcoreHome.PNG'
 const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -39,15 +39,6 @@ const Projects = () => {
             isDeployed: true,
         },
         {
-            headline: "Copycat Starbucks Site",
-            description: "A simple, yet beautiful copy of the Holiday Rendition of the Starbucks Website homepage",
-            image1: StarbucksHome,
-            image2: StarbucksAnimation,
-            repoURL: "https://github.com/EthanAmato/Starbucks-Copy",
-            deploymentURL: "https://ethanamato.github.io/Starbucks-Copy/",
-            isDeployed: true,
-        },
-        {
             headline: "Fullstack Twitter Clone",
             description: "A Twitter clone complete with working hashtags, authentication, following, and home feed. Made with Springboot in Java",
             image1: TwitterCloneHome,
@@ -62,6 +53,32 @@ const Projects = () => {
             image2: QuizResultsPage,
             repoURL: "https://github.com/EthanAmato/PediatricQuizzerClient",
             isDeployed: false,
+        },
+        {
+            headline: "Real-Time Chat Application",
+            description: "Made using React, Websocket.io, and ExpressJS, users are able to communicate in real time. Includes time stamps, id-based chatroom selection, and user dispay names.",
+            image1: ChatApp,
+            image2: ChatAppAnimation,
+            repoURL: "https://github.com/EthanAmato/ChatAppFrontEnd",
+            isDeployed: false,
+        },
+        {
+            headline: "Frontend Devstack Website Mockup",
+            description: "A beautiful website containing an animated, interactive 3D-Rendering of a well-designed site. Made using Figma and Spline.",
+            image1: FrontEndDevStack,
+            image2: FrontEndDevStackAnimation,
+            repoURL: "https://github.com/EthanAmato/3dModelDemo",
+            deploymentURL: "https://3d-model-demo-git-main-ethanamato.vercel.app",
+            isDeployed: true,
+        },
+        {
+            headline: "Copycat Starbucks Site",
+            description: "A simple, yet beautiful copy of the Holiday Rendition of the Starbucks Website homepage",
+            image1: StarbucksHome,
+            image2: StarbucksAnimation,
+            repoURL: "https://github.com/EthanAmato/Starbucks-Copy",
+            deploymentURL: "https://ethanamato.github.io/Starbucks-Copy/",
+            isDeployed: true,
         },
         {
             headline: "Responsive Menu Design",
