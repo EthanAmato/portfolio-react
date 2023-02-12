@@ -5,7 +5,6 @@ import Contact from './components/Contact'
 import Layout from './components/Layout'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
-// import Dashboard from './components/Dashboard'
 import './App.scss'
 
 function App() {

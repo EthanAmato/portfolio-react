@@ -87,7 +87,7 @@ const Sidebar = () => {
                     <a
                         target="_blank"
                         rel='noreferrer'
-                        href="https://drive.google.com/file/d/1cfbK_ah6iWzgpt1KPs5qQkhoi7ycCAAh/view?usp=share_link"
+                        href="https://drive.google.com/file/d/1fRj3b5ihNRy67wf3paG9YpmfnUiJfT_b/view?usp=sharing"
                         download={"Ethan Amato Resume"}
                     >
                         <FontAwesomeIcon

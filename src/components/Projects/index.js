@@ -5,7 +5,7 @@ import "react-multi-carousel/lib/styles.css"
 import { useState, useEffect } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
 import Loader from 'react-loaders';
-import { ECommerceAnimation, EcommerceHome, GraphAnimation, GraphHome, NotesAppHome, NotesAppMarkdown, PrettyMenuAnimation, PrettyMenuIMG, QuizHomePage, QuizResultsPage, SemCoreAnimation, SemCoreHome, StarbucksAnimation, StarbucksHome, TwitterCloneHome, TwitterCloneProfile, FrontEndDevStack, FrontEndDevStackAnimation, ChatApp, ChatAppAnimation } from '../../assets/images/project_images';
+import { ECommerceAnimation, EcommerceHome, GraphAnimation, GraphHome, NotesAppHome, NotesAppMarkdown, PrettyMenuAnimation, PrettyMenuIMG, QuizHomePage, QuizResultsPage, SemCoreAnimation, SemCoreHome, StarbucksAnimation, StarbucksHome, TwitterCloneHome, TwitterCloneProfile, FrontEndDevStack, FrontEndDevStackAnimation, ChatApp, ChatAppAnimation, IpGeolocator, IpGeolocatorAnimation } from '../../assets/images/project_images';
 // import se from '../../assets/images/project_images/SemcoreHome.PNG'
 const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -60,7 +60,16 @@ const Projects = () => {
             image1: ChatApp,
             image2: ChatAppAnimation,
             repoURL: "https://github.com/EthanAmato/ChatAppFrontEnd",
-            isDeployed: false,
+            isDeployed: true,
+        },
+        {
+            headline: "IP Geolocation App",
+            description: "Made using Vite React, SASS, and the Leaflet JS and Geolocator APIs to display where in the world a user-inputted IP Address is located",
+            image1: IpGeolocator,
+            image2: IpGeolocatorAnimation,
+            repoURL: "https://github.com/EthanAmato/IpGeolocationTracker",
+            deploymentURL: "https://ip-geolocation-tracker-nu.vercel.app",
+            isDeployed: true,
         },
         {
             headline: "Frontend Devstack Website Mockup",
