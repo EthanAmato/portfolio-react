@@ -91,6 +91,7 @@
 .skills-page .text-zone {
     height: 90vh;
     z-index: 10;
+    overflow-y: scroll;
     p {
         background-color: rgba(170, 238, 228, 0.1);
         padding: 10px;
