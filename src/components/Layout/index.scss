@@ -29,7 +29,7 @@
 .container {
     width: 100%;
     will-change: contents;
-    height: 90%;
+    height: 90vh;
     min-height: 566px;
     position: absolute;
     opacity: 0;
@@ -111,12 +111,13 @@
 @media screen and (max-width: 1200px) {
     .page {
       position: initial;
+      min-height: 100dvh;
     }
-  
+    
     .container {
-      position: initial;
-      height: auto;
-      min-height: auto;
+      position: inherit;
+      min-height: fit-content;
+      overflow-y: scroll;
       &.contact-page,
       &.skills-page,
       &.about-page,
@@ -127,9 +128,16 @@
           width: 100%;
           display: block;
           padding: 20px;
+          padding-top: 0;
           box-sizing: border-box;
         }
       }
+      &.contact-page {
+        .flat-button {
+          margin-top: 0;
+          margin-bottom: 100px;
+        }
+       }
   
       &.projects-page {
         width: 100%;
@@ -147,11 +155,11 @@
         }
       }
     }
-  
-    .stage-cube-cont {
-      position: initial;
-      width: 100%;
-      height: 0%;
-      overflow: visible;
-    }
+   
+    // .stage-cube-cont {
+    //   position: initial;
+    //   width: 100%;
+    //   height: 100vh;
+    //   overflow: visible;
+    // }
   }

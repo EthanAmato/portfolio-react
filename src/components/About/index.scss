@@ -135,6 +135,8 @@
 
     .about-page {
         .text-zone {
+            height: 100vh;
+            margin-bottom: 50px;
             p {
                 border-radius: 1em;
                 padding: 7px;
@@ -147,6 +149,7 @@
         width: 100%;
         position: absolute;
         top: 10%;
+        height: 100vh;
         opacity: .3;
     }
 
