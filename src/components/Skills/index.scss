@@ -78,7 +78,8 @@
     z-index: -10;
     .text-sphere{
         position: absolute;
-        top: 10%;
+        top: 15%;
+        z-index: -1000;
         div {
             .tagcloud {
                 z-index: -1000;
