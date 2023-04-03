@@ -5,7 +5,7 @@ import "react-multi-carousel/lib/styles.css"
 import { useState, useEffect } from 'react';
 import AnimatedLetters from '../AnimatedLetters';
 import Loader from 'react-loaders';
-import { ECommerceAnimation, EcommerceHome, GraphAnimation, GraphHome, NotesAppHome, NotesAppMarkdown, PrettyMenuAnimation, PrettyMenuIMG, QuizHomePage, QuizResultsPage, SemCoreAnimation, SemCoreHome, StarbucksAnimation, StarbucksHome, TwitterCloneHome, TwitterCloneProfile, FrontEndDevStack, FrontEndDevStackAnimation, ChatApp, ChatAppAnimation, IpGeolocator, IpGeolocatorAnimation } from '../../assets/images/project_images';
+import { ECommerceAnimation, EcommerceHome, GraphAnimation, GraphHome, NotesAppHome, NotesAppMarkdown, PrettyMenuAnimation, PrettyMenuIMG, QuizHomePage, QuizResultsPage, SemCoreAnimation, SemCoreHome, StarbucksAnimation, StarbucksHome, TwitterCloneHome, TwitterCloneProfile, FrontEndDevStack, FrontEndDevStackAnimation, ChatApp, ChatAppAnimation, IpGeolocator, IpGeolocatorAnimation, NetflixClone, NetflixCloneAnimation } from '../../assets/images/project_images';
 // import se from '../../assets/images/project_images/SemcoreHome.PNG'
 const Projects = () => {
     const [letterClass, setLetterClass] = useState('text-animate');
@@ -36,6 +36,15 @@ const Projects = () => {
             image2: GraphAnimation,
             repoURL: "https://github.com/EthanAmato/3dPlotter",
             deploymentURL: "https://ethanamato.github.io/3dPlotter/",
+            isDeployed: true,
+        },
+        {
+            headline: "Fullstack Netflix Clone",
+            description: "A clone of the Netflix Streaming Server built using React, NextJS, PrismaDB, MongoDB, Tailwind CSS,and OAuth 2.0",
+            image1: NetflixClone,
+            image2: NetflixCloneAnimation,
+            repoURL: "https://github.com/EthanAmato/netflix-clone",
+            deploymentURL: "https://netflix-clone-lake-nine.vercel.app/auth",
             isDeployed: true,
         },
         {
