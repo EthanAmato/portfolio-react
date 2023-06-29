@@ -117,7 +117,7 @@ const About = () => {
                         />
                     </h1>
                     <p>
-                        I am a driven full-stack developer with hands-on experience in Quantitative, Analytical Research and Data Science
+                        I am a driven developer with hands-on experience in Quantitative Research, Data Science, and Full-stack web development
                         and am looking for an opportunity to work on apps by an established, customer-driven company that will
                         provide an environment where I can continuously learn and grow
                     </p>
@@ -160,7 +160,7 @@ const About = () => {
                 </div>
             </div>
             <div className='loader-wrapper'>
-                <Loader type="cube-transition" style={{ transform: 'scale(1.5)' }} />
+                <Loader  type="cube-transition" style={{ transform: 'scale(1.5)' }} />
             </div>
         </>
     )

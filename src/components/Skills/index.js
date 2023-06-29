@@ -37,6 +37,13 @@ const Skills = () => {
         "NLP",
         "Data Visualization",
         "Cluster Analysis",
+        "Next.js",
+        "PostgreSQL",
+        "Typescript",
+        "tRPC",
+        "TailwindCSS",
+        "Next Auth",
+        "Prisma"
     ];
 
     function handleTagClick(tag) {
@@ -94,9 +101,9 @@ const Skills = () => {
                         dataset with over 400,000 datapoints.
                     </p>
                     <p>
-
-                        I have practical experience with full-stack web development. I completed the Tech Talent South FullStack Developer
-                        course and have several deployed projects demonstrating a proficiency in web development
+                        I have practical experience with full-stack web development. I teach a full stack development course for a leading coding bootcamp
+                        and work as a contract full stack web developer for a Sensory Consulting company building internal applications using Next.js,
+                        Prisma, tRPC, TailwindCSS, Next Auth, Microsoft Azure, and PostgreSQL
                     </p>
                     <Link to="/projects" className='flat-button'>SEE MY PROJECTS</Link>
 
