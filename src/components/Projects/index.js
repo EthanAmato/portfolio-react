@@ -30,24 +30,24 @@ import {
   IpGeolocatorAnimation,
   NetflixClone,
   NetflixCloneAnimation,
-  SensoryConnect,
-  SensoryConnectAnimation
+  // SensoryConnect,
+  // SensoryConnectAnimation
 } from '../../assets/images/project_images'
 // import se from '../../assets/images/project_images/SemcoreHome.PNG'
 const Projects = () => {
   const [letterClass, setLetterClass] = useState('text-animate')
 
   const myProjects = [
-    {
-      headline: 'SensoryConnect',
-      description:
-        "A fullstack web app using the T3 Stack (Next.js, Typescript, Next-auth, Prisma, tRPC) with Microsoft Azure Authentication and a PostgreSQL DB that lets consultants of the sensory consulting firm 'Sensory Spectrum' easily filter proprietary data. (Repo is private)",
-      image1: SensoryConnect,
-      image2: SensoryConnectAnimation,
-      repoURL: 'https://github.com/EthanAmato/sensory-connect-prisma-test',
-      deploymentURL: 'https://sensory-connect-prisma-test.vercel.app/',
-      isDeployed: true,
-    },
+    // {
+    //   headline: 'SensoryConnect',
+    //   description:
+    //     "A fullstack web app using the T3 Stack (Next.js, Typescript, Next-auth, Prisma, tRPC) with Microsoft Azure Authentication and a PostgreSQL DB that lets consultants of the sensory consulting firm 'Sensory Spectrum' easily filter proprietary data. (Repo is private)",
+    //   image1: SensoryConnect,
+    //   image2: SensoryConnectAnimation,
+    //   repoURL: 'https://github.com/EthanAmato/sensory-connect-prisma-test',
+    //   deploymentURL: 'https://sensory-connect-prisma-test.vercel.app/',
+    //   isDeployed: true,
+    // },
     {
       headline: 'Semantic Core',
       description:
